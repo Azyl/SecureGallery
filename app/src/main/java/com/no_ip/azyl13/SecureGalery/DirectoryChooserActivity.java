@@ -32,6 +32,21 @@ public class DirectoryChooserActivity extends Activity
     }
 
     @Override
+    public void onResume(){
+        DatabaseHandler db = new DatabaseHandler(this);
+
+
+        TextView topTextV = (TextView) findViewById(R.id.textView_topD);
+
+
+        Folder UserDefaultFolder = db.getFolderDefault(Utils.loggedUser);
+
+        EditText DefDir = (EditText) findViewById(R.id.editText_default_Path);
+        DefDir.setText(UserDefaultFolder.getPath());
+
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -76,6 +91,8 @@ public class DirectoryChooserActivity extends Activity
                                         Utils.PHOTO_ALBUM = chosenDir;
                                         Log.d("azyl13", chosenDir);
                                         //
+                                        EditText DefDir = (EditText) findViewById(R.id.editText_default_Path);
+                                        DefDir.setText(Utils.PHOTO_ALBUM);
 
 
 

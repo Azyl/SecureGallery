@@ -11,7 +11,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pick folder"
+            android:text="PICK PATH"
             android:id="@+id/chooseDirButton"
             android:layout_gravity="center_horizontal"
             android:layout_alignParentBottom="true"
@@ -46,7 +46,10 @@
             android:id="@+id/textView_topD"
             android:layout_above="@+id/textView4"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="173dp" />
+            android:layout_marginBottom="173dp"
+            android:capitalize="characters"
+            android:elegantTextHeight="true"
+            android:textSize="14dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -60,12 +63,12 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="USE DEFAULT"
+            android:text="USE PATH"
             android:id="@+id/button_use_default"
             android:onClick="onUseDefault"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:maxWidth="150dp" />
+            android:maxWidth="100dp" />
 
         <Button
             android:layout_width="wrap_content"
@@ -74,7 +77,7 @@
             android:id="@+id/button_set_default"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:maxWidth="150dp" />
+            android:maxWidth="100dp" />
 
     </RelativeLayout>
 </LinearLayout>

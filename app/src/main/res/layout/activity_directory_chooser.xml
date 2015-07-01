@@ -21,13 +21,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/editText_default_Path"
-            android:layout_alignBottom="@+id/chooseDirButton"
-            android:layout_marginBottom="83dp"
             android:editable="false"
             android:enabled="true"
+            android:clickable="true"
+            android:layout_below="@+id/textView4"
             android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:clickable="true" />
+            android:layout_marginTop="43dp"
+            android:layout_alignParentEnd="true" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,8 +35,8 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="The user has the following folder:"
             android:id="@+id/textView4"
-            android:layout_above="@+id/editText_default_Path"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/button_use_default" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,8 +44,9 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Small Text"
             android:id="@+id/textView_topD"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_above="@+id/textView4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="173dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -53,7 +54,27 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Log-ed User Email:"
             android:id="@+id/textView6"
-            android:layout_centerVertical="true"
+            android:layout_alignTop="@+id/textView_topD"
             android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USE DEFAULT"
+            android:id="@+id/button_use_default"
+            android:onClick="onUseDefault"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:maxWidth="150dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SET DEFAULT"
+            android:id="@+id/button_set_default"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:maxWidth="150dp" />
+
     </RelativeLayout>
 </LinearLayout>

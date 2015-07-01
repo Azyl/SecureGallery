@@ -17,6 +17,20 @@ import android.widget.Toast;
 
 public class DirectoryChooserActivity extends Activity
 {
+
+    public void onUseDefault(View view){
+        setContentView(R.layout.activity_fulscreen_view);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        Utils utils = new Utils(getApplicationContext());
+        Intent i = getIntent();
+        int position = i.getIntExtra("position", 0);
+        FullScreenImageAdapter adapter = new FullScreenImageAdapter(DirectoryChooserActivity.this,
+                utils.getFilePaths());
+        viewPager.setAdapter(adapter);
+        // displaying selected image first
+        viewPager.setCurrentItem(position);
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -60,20 +74,11 @@ public class DirectoryChooserActivity extends Activity
                                                         chosenDir, Toast.LENGTH_LONG).show();
 
                                         Utils.PHOTO_ALBUM = chosenDir;
-                                        Log.d("azyl13",chosenDir);
+                                        Log.d("azyl13", chosenDir);
                                         //
 
 
-                                        setContentView(R.layout.activity_fulscreen_view);
-                                        ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-                                        Utils utils = new Utils(getApplicationContext());
-                                        Intent i = getIntent();
-                                        int position = i.getIntExtra("position", 0);
-                                        FullScreenImageAdapter adapter = new FullScreenImageAdapter(DirectoryChooserActivity.this,
-                                                utils.getFilePaths());
-                                        viewPager.setAdapter(adapter);
-                                        // displaying selected image first
-                                        viewPager.setCurrentItem(position);
+
 
 
                                         //
@@ -87,6 +92,14 @@ public class DirectoryChooserActivity extends Activity
                 directoryChooserDialog.chooseDirectory(m_chosenDir);
                 m_newFolderEnabled = ! m_newFolderEnabled;
             }
+
+
+
+
         });
+
+
+
+
     }
 }
